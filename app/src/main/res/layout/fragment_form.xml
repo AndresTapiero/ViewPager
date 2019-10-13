@@ -23,7 +23,7 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="21dp"
-                android:text="Persona Name"
+                android:text="@string/person_name"
                 android:textStyle="bold" />
 
             <EditText
@@ -32,8 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="21dp"
-                android:hint=""/>
+                android:layout_marginEnd="21dp" />
             <TextView
                 android:id="@+id/PersonCountry"
                 android:layout_width="347dp"
@@ -41,7 +40,7 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="21dp"
-                android:text="Person Country"
+                android:text="@string/person_country"
 
                 android:textStyle="bold" />
 
@@ -59,9 +58,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <Button
+                android:id="@+id/createPerson"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="CREATE PERSON" />
+                android:text="@string/create_person"
+                android:background="@color/colorButton"
+                android:textColor="@color/divider"/>
         </LinearLayout>
 
 
