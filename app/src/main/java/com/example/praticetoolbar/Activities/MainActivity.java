@@ -1,13 +1,11 @@
 package com.example.praticetoolbar.Activities;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
-
 
 import com.example.praticetoolbar.Activities.Adapter.PageAdapter;
 import com.example.praticetoolbar.R;
@@ -23,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         final TabLayout tabLayout = findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("List"));
         tabLayout.addTab(tabLayout.newTab().setText("Form"));
+        tabLayout.addTab(tabLayout.newTab().setText("List"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         // Add TabLayout
@@ -58,10 +56,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getTabLayout() {
-        final TabLayout tabLayout = findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("List"));
-        tabLayout.addTab(tabLayout.newTab().setText("Form"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-    }
 }
