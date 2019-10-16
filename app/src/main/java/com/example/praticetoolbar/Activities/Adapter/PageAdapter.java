@@ -3,6 +3,7 @@ package com.example.praticetoolbar.Activities.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
 import com.example.praticetoolbar.Fragments.FormFragment;
 import com.example.praticetoolbar.Fragments.ListFragment;
 
@@ -23,9 +24,9 @@ public class PageAdapter extends FragmentStatePagerAdapter {
                 return new FormFragment();
             case 1:
                 return new ListFragment();
-        }
 
-        return null;
+                default: return null;
+        }
     }
 
     @Override
