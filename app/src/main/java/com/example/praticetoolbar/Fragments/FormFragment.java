@@ -1,9 +1,9 @@
 package com.example.praticetoolbar.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.praticetoolbar.Interfaces.cambiarFragment;
 import com.example.praticetoolbar.R;
 
 
@@ -20,6 +21,8 @@ public class FormFragment extends Fragment {
     private Spinner SpinnerCountrys;
     private Button button;
     private EditText editTextName;
+    public static ViewPager mViewPager;
+    cambiarFragment EM;
 
     public FormFragment() {
         // Required empty public constructor
@@ -37,24 +40,40 @@ public class FormFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Paises, android.R.layout.simple_spinner_dropdown_item
         );
         SpinnerCountrys.setAdapter(adapter);
-        button = view.findViewById(R.id.createPerson);
         editTextName = view.findViewById(R.id.editTextNamePerson);
+        button = view.findViewById(R.id.createPerson);
        // strUsername = editTextName.getText().toString();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Andres","Si estoy haciendo Clic");
+
+                String name = editTextName.getText().toString();
+                EM.cambiar(name);
+
+
+               // cambiarFragment()
+                //mViewPager.setCurrentItem(PagerAdapter.);
+/*                Log.d("Andres","Si estoy haciendo Clic");
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.firstFragment, new ListFragment());
                 transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.commit();*/
 
 
             }
         });
         return view;
     }
+
+    public void onAttach(Context context) {
+
+        super.onAttach(context);
+
+        EM = (cambiarFragment) context;
+    }
+
+
 
 
 }

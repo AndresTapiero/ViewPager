@@ -2,14 +2,20 @@ package com.example.praticetoolbar.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Button;
 
 import com.example.praticetoolbar.Activities.Adapter.PageAdapter;
+import com.example.praticetoolbar.Interfaces.cambiarFragment;
 import com.example.praticetoolbar.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements cambiarFragment {
+
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
                 viewPager.setCurrentItem(position);
+
             }
 
             @Override
@@ -48,5 +55,19 @@ public class MainActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
+
+    }
+
+    private void cambiarFragment(Fragment fragment) {
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.firstFragment, fragment);
+        transaction.commit();
+    }
+
+    @Override
+    public void cambiar(String mensaje) {
+
     }
 }
